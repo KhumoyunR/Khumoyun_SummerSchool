@@ -1,0 +1,19 @@
+{
+  "name": "khumoyun_summerschool",
+  "version": "1.0.0",
+  "description": "Summer school #2 Cypress project",
+  "main": "comments.js",
+  "scripts": {
+    "format": "npx prettier . --write"
+  },
+  "keywords": [
+    "cypress",
+    "js"
+  ],
+  "author": "Khumoyun Rakhimov",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.13.1",
+    "prettier": "^3.3.3"
+  }
+}
