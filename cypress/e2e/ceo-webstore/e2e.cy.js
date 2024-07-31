@@ -5,11 +5,11 @@ import Checkout from '../../pageElements/Checkout'
 
 // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-261
 describe('e2e test to check functionalities of webstore', () => {
-    const email = Cypress.env('email')
-    const password = Cypress.env('password')
+    const EMAIL = Cypress.env('email')
+    const PASSWORD = Cypress.env('password')
 
     beforeEach(() => {
-        cy.login(email, password)
+        cy.login(EMAIL, PASSWORD)
     })
     
     // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-273
