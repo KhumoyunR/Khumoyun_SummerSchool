@@ -1,5 +1,5 @@
-let age = 21;
+let age = 21
 
-age = 31;
+age = 31
 
-console.log(age);
+console.log(age)
