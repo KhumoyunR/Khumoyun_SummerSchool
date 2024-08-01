@@ -5,7 +5,7 @@ class Checkout {
         address: () => cy.getByTestId('shipping-address-input'),
         postalCode: () => cy.getByTestId('shipping-postal-code-input'),
         city: () => cy.getByTestId('shipping-city-input'),
-        country: () => cy.get('select').select('Latvia'),
+        country: () => cy.get('select'),
         submitAddress: () => cy.getByTestId('submit-address-button'),
         deliveryOption: () => cy.getByTestId('delivery-option-radio'),
         submitDelivery: () => cy.getByTestId('submit-delivery-option-button'),
