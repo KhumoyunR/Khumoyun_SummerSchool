@@ -5,7 +5,7 @@ class Checkout {
         address: () => cy.getByTestId('shipping-address-input'),
         postalCode: () => cy.getByTestId('shipping-postal-code-input'),
         city: () => cy.getByTestId('shipping-city-input'),
-        country: () => cy.get('select'),
+        country: () => cy.getByTestId('shipping-country-select'), //cy.get('select') there are 2 options of selectors 
         submitAddress: () => cy.getByTestId('submit-address-button'),
         deliveryOption: () => cy.getByTestId('delivery-option-radio'),
         submitDelivery: () => cy.getByTestId('submit-delivery-option-button'),
@@ -13,10 +13,6 @@ class Checkout {
         submitPayment: () => cy.getByTestId('submit-payment-button'),
         placeOrder: () => cy.getByTestId('submit-order-button'),
     }
-
-    // fillInputField(element, inputValue) {
-    //   this.element.type(inputValue)
-    // }
 }
 
 export default new Checkout()

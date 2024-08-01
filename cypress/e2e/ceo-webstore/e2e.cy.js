@@ -25,7 +25,7 @@ describe('e2e test to check functionalities of webstore', () => {
     // https://tdlschool.atlassian.net/browse/TSS22N-280
     it('add a T-Shirt to cart', () => {
         cy.visit('/store')
-        Product.elements.product().click()
+        Product.elements.productByHref().click()
         Product.elements.sizeOptions('S').click()
         Product.elements.colorOptions('Black').click()
         Product.elements.addToCartButton().click()
@@ -57,8 +57,6 @@ describe('e2e test to check functionalities of webstore', () => {
     it('logout after successful order', () => {
         cy.visit(Cypress.env('orderUrl'))       // in this step re-used the previous saved URL
         Global.elements.sideBarBurger().click()
-        // cy.visit('/lv')
-        // cy.contains('US').click();
         Global.elements.logOutButton().click()
     })
 })
