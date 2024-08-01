@@ -5,7 +5,7 @@ class Product {
         productByID: () => cy.getByTestId('product-wrapper').first(),
         /* This option chooses product by 'href' selector, you have to change product's href(url) 
         correspondingly to choose another desired product */
-        productByHref: () => cy.getByHref('/us/products/t-shirt'),
+        productByHref: () => cy.getByHref('/us/products/t-shirt'), // TODO: would be nice to add 'product' parameter instead of 't-shirt' so we can select all product not just 't-shirt'
         sizeOptions: (sizeName) =>
             cy.getByTestId('product-options').contains('button', sizeName),
         colorOptions: (colorName) =>
