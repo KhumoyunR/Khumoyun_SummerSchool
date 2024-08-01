@@ -2,7 +2,6 @@ import Login from '../../../pageElements/Login'
 import Signup from '../../../pageElements/Signup'
 
 describe('Test to check functionality of input fields in Sign up page', () => {
-    
     before(() => {
         cy.visit('/')
         Login.elements.joinUsButton().click()

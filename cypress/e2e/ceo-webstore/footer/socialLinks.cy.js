@@ -1,5 +1,4 @@
 describe('Test to check functionalities of social links', () => {
-
     const socialLinks = {
         web: 'https://www.testdevlab.com/',
         linkedIn: 'https://www.linkedin.com/company/testdevlab/',

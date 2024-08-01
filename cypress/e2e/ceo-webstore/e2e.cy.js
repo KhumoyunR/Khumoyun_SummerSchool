@@ -11,7 +11,7 @@ describe('e2e test to check functionalities of webstore', () => {
     beforeEach(() => {
         cy.login(EMAIL, PASSWORD)
     })
-    
+
     // https://tdlschool.atlassian.net/browse/TSS22N-273
     /* If you want to skip or do not run some of the scenarios again and again, you can add '.skip()' after 'it' 
     If you want to run just one scenario, then you can use '.only()' after 'it'. */
@@ -48,14 +48,15 @@ describe('e2e test to check functionalities of webstore', () => {
         Checkout.elements.submitPayment().click()
         Checkout.elements.placeOrder().click()
         cy.url().should('include', '/order/confirmed/order') // this line of the code checks of the content of the URL for given text
-        cy.url().then((url) => {                // if previous step passes successfully, it saves URL to re-use in the next scenarios
+        cy.url().then((url) => {
+            // if previous step passes successfully, it saves URL to re-use in the next scenarios
             Cypress.env('orderUrl', url)
         })
     })
 
     // https://tdlschool.atlassian.net/browse/TSS22N-297
     it('logout after successful order', () => {
-        cy.visit(Cypress.env('orderUrl'))       // in this step re-used the previous saved URL
+        cy.visit(Cypress.env('orderUrl')) // in this step re-used the previous saved URL
         Global.elements.sideBarBurger().click()
         Global.elements.logOutButton().click()
     })

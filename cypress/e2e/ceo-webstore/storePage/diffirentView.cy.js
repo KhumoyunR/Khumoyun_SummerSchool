@@ -3,7 +3,6 @@ import Store from '../../../pageElements/Store'
 
 // https://tdlschool.atlassian.net/browse/TSS22N-171
 describe('e2e test to check functionalities of store page', () => {
-
     it('test different views of products in store page', () => {
         cy.login(Cypress.env('email'), Cypress.env('password'))
         cy.visit('/')

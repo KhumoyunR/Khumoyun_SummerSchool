@@ -6,7 +6,7 @@ class Signup {
         passwordInput: () => cy.getByTestId('password-input'),
         joinButton: () => cy.getByTestId('register-button'),
     }
-    
+
     fillFirstName(firstName) {
         this.elements.firstNameInput().type(firstName)
     }
