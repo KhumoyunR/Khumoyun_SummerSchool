@@ -1,9 +1,8 @@
 class Product {
-
     elements = {
         /*This option chooses product by 'data-testid' selector, so you have to change product's number 
         in a row of block correspondingly in order to choose another desired product. */
-        productByID: () => cy.getByTestId('product-wrapper').first(),  
+        productByID: () => cy.getByTestId('product-wrapper').first(),
         /* This option chooses product by 'href' selector, you have to change product's href(url) 
         correspondingly to choose another desired product */
         productByHref: () => cy.getByHref('/us/products/t-shirt'),

@@ -4,7 +4,8 @@ class Global {
         logOutButton: () => cy.getByTestId('logout-button'),
         sideBarLinks: (pageName) =>
             cy.getByTestId('nav-menu-popup').contains('a', pageName),
-        languageOption: () => cy.get('.shadow-buttons-neutral.txt-compact-small'),
+        languageOption: () =>
+            cy.get('.shadow-buttons-neutral.txt-compact-small'),
     }
 
     navigateSideBar = {
