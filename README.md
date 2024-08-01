@@ -35,12 +35,30 @@ Install Cypress
   npm install cypress
 ```
 
+## Environment Variables
+
+Before running this project, you will need to sign up in [Webstore](https://coe-webstore.tdlbox.com/sign-up) and add the registered **email** and **password** in corresponding lines in **cypress.config.js** file
+
 ## Running Tests
 
 To run tests, run the following command:
 
 ```
   npm run cypress-open
+```
+## Running Tests in headless mode
+
+To run all tests in headless mode, run the following command:
+ßß
+```
+  npm run cypress-run
+```
+## Clean up the previous reports' file
+
+To clean the previous report folder, run the following command:
+ßß
+```
+  npm run reports-cleanup
 ```
 
 ## Plugin

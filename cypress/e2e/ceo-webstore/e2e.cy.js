@@ -3,7 +3,7 @@ import Home from '../../pageElements/Home'
 import Product from '../../pageElements/Product'
 import Checkout from '../../pageElements/Checkout'
 
-// https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-261
+// https://tdlschool.atlassian.net/browse/TSS22N-261
 describe('e2e test to check functionalities of webstore', () => {
     const EMAIL = Cypress.env('email')
     const PASSWORD = Cypress.env('password')
@@ -12,7 +12,7 @@ describe('e2e test to check functionalities of webstore', () => {
         cy.login(EMAIL, PASSWORD)
     })
     
-    // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-273
+    // https://tdlschool.atlassian.net/browse/TSS22N-273
     /* If you want to skip or do not run some of the scenarios again and again, you can add '.skip()' after 'it' 
     If you want to run just one scenario, then you can use '.only()' after 'it'. */
     it('logs in to webstore & opens Store page from sidebar', () => {
@@ -22,7 +22,7 @@ describe('e2e test to check functionalities of webstore', () => {
         Global.navigateSideBar.openPage('Store')
     })
 
-    // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-280
+    // https://tdlschool.atlassian.net/browse/TSS22N-280
     it('add a T-Shirt to cart', () => {
         cy.visit('/store')
         Product.elements.product().click()
@@ -32,7 +32,7 @@ describe('e2e test to check functionalities of webstore', () => {
         Product.elements.addToCartIcon().click()
     })
 
-    // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-289
+    // https://tdlschool.atlassian.net/browse/TSS22N-289
     it('fill data in checkout page', () => {
         cy.visit('/checkout?step=address')
         Checkout.elements.firstName().click().type('Bob')
@@ -40,7 +40,7 @@ describe('e2e test to check functionalities of webstore', () => {
         Checkout.elements.address().click().type('Dammes iela 1')
         Checkout.elements.postalCode().click().type('LV-1069')
         Checkout.elements.city().click().type('Riga')
-        Checkout.elements.country()
+        Checkout.elements.country().select('Latvia')
         Checkout.elements.submitAddress().click()
         Checkout.elements.deliveryOption().contains('FakeEx Standard').click()
         Checkout.elements.submitDelivery().click()
@@ -53,10 +53,12 @@ describe('e2e test to check functionalities of webstore', () => {
         })
     })
 
-    // https://tdlschool.atlassian.net/jira/software/c/projects/TSS22N/boards/274?label=Khumoyun&selectedIssue=TSS22N-297
+    // https://tdlschool.atlassian.net/browse/TSS22N-297
     it('logout after successful order', () => {
         cy.visit(Cypress.env('orderUrl'))       // in this step re-used the previous saved URL
         Global.elements.sideBarBurger().click()
+        // cy.visit('/lv')
+        // cy.contains('US').click();
         Global.elements.logOutButton().click()
     })
 })
