@@ -30,6 +30,7 @@ describe('e2e test to check functionalities of webstore', () => {
         Product.elements.colorOptions('Black').click()
         Product.elements.addToCartButton().click()
         Product.elements.addToCartIcon().click()
+        // TODO: need to add validation that 'add to cart' action happened successfully
     })
 
     // https://tdlschool.atlassian.net/browse/TSS22N-289
@@ -59,5 +60,6 @@ describe('e2e test to check functionalities of webstore', () => {
         cy.visit(Cypress.env('orderUrl')) // in this step re-used the previous saved URL
         Global.elements.sideBarBurger().click()
         Global.elements.logOutButton().click()
+        // TODO: need to add check that login page element is visible after logout, otherwise we dont know if click worked
     })
 })
