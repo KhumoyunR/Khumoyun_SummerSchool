@@ -8,7 +8,7 @@ module.exports = defineConfig({
 
     env: {
         email: 'abc.abc@gmail.com', // add your registered email here in quotes
-        password: 'abc', // add your registered password here in quotes
+        password: 'abc', // add your registered password here in quotes        // TODO: need to remove password from github, only add it locally & use CYPRESS_PASSWORD variable from repo secrets
     },
     e2e: {
         viewportWidth: 1920,
