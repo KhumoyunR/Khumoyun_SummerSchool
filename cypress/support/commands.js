@@ -5,6 +5,10 @@ Cypress.Commands.add('getByTestId', (id) => {
     cy.get(`[data-testid=${id}]`)
 })
 
+Cypress.Commands.add('getByHref', (href) => {
+    cy.get(`[href="${href}"]`)
+})
+
 Cypress.Commands.add('login', (email, password) => {
     cy.session([email, password], () => {
         cy.visit('/')
