@@ -8,6 +8,7 @@ class Cart {
         discountRemove: () => cy.getByTestId('remove-discount-button'),
         productRemove: () => cy.get('[data-testid="product-row"] button'),
         addToCartIcon: () => cy.getByTestId('nav-cart-link'),
+        cartContainer: () => cy.getByTestId('cart-container'),
     }
 }
 

@@ -2,6 +2,8 @@ import Global from '../../pageElements/Global'
 import Home from '../../pageElements/Home'
 import Product from '../../pageElements/Product'
 import Checkout from '../../pageElements/Checkout'
+import Cart from '../../pageElements/Cart'
+import Login from '../../pageElements/Login'
 
 // https://tdlschool.atlassian.net/browse/TSS22N-261
 describe('e2e test to check functionalities of webstore', () => {
@@ -30,6 +32,7 @@ describe('e2e test to check functionalities of webstore', () => {
         Product.elements.colorOptions('Black').click()
         Product.elements.addToCartButton().click()
         Product.elements.addToCartIcon().click()
+        Cart.elements.cartContainer().contains('h1', 'Cart')
     })
 
     // https://tdlschool.atlassian.net/browse/TSS22N-289
@@ -59,5 +62,8 @@ describe('e2e test to check functionalities of webstore', () => {
         cy.visit(Cypress.env('orderUrl')) // in this step re-used the previous saved URL
         Global.elements.sideBarBurger().click()
         Global.elements.logOutButton().click()
+        Login.elements.emailInput().should('be.visible')
+        Login.elements.passwordInput().should('be.visible')
+        Login.elements.signInButton().should('be.visible')
     })
 })
